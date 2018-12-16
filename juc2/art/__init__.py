@@ -51,5 +51,3 @@ class Triangle:
             triangle.append(' '*x + '/' + ' '*i + '\\' + '\n')
             x += 1
         return ''.join(triangle[::-1])
-
-

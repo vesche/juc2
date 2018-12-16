@@ -1,23 +1,5 @@
 """juc2.art.symbols"""
 
-arrow_up = r'''
-     .
-   .:;:.
- .:;;;;;:.
-   ;;;;;
-   ;;;;;
-   ;;;;;
-   ;;;;;
-   ;:;;;
-   : ;;;
-     ;:;
-   . :.;
-     . :
-   .   .
-
-      .
-'''
-
 arrow_down = r'''
      .
        .
@@ -36,6 +18,14 @@ arrow_down = r'''
     ':`
 '''
 
+arrow_left = r'''
+    .
+  .;;............ ..
+.;;;;::::::::::::..
+ ':;;:::::::::::: . .
+   ':
+'''
+
 arrow_right = r'''
                 .
  .. ............;;.
@@ -44,12 +34,22 @@ arrow_right = r'''
                 :'
 '''
 
-arrow_left = r'''
-    .
-  .;;............ ..
-.;;;;::::::::::::..
- ':;;:::::::::::: . .
-   ':
+arrow_up = r'''
+     .
+   .:;:.
+ .:;;;;;:.
+   ;;;;;
+   ;;;;;
+   ;;;;;
+   ;;;;;
+   ;:;;;
+   : ;;;
+     ;:;
+   . :.;
+     . :
+   .   .
+
+      .
 '''
 
 
@@ -65,10 +65,6 @@ class _Meta:
 
 class Symbols:
 
-    class ArrowUp(_Meta):
-        author = 'unknown'
-        figure = arrow_up
-
     class ArrowDown(_Meta):
         author = 'unknown'
         figure = arrow_down
@@ -80,3 +76,7 @@ class Symbols:
     class ArrowRight(_Meta):
         author = 'unknown'
         figure = arrow_right
+    
+    class ArrowUp(_Meta):
+        author = 'unknown'
+        figure = arrow_up
