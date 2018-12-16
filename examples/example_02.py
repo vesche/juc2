@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-'''
+"""
 juc2/example/example_02.py
 
 Move a rectangle across the terminal. <3
-'''
+"""
 
 from juc2 import art, Stage
 

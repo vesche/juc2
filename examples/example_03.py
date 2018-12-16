@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-'''
+"""
 juc2/example/example_03.py
 
 Draw a triangle and square to the terminal.
 The square will move around at random. :D
-'''
+"""
 
 from juc2 import art, Stage
 from random import randint

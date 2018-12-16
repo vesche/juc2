@@ -1,4 +1,4 @@
-"""juc2.terminal"""
+"""juc2.stage"""
 
 import os
 import time

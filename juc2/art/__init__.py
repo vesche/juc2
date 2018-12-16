@@ -40,9 +40,6 @@ class Triangle:
         self.transparent = transparent
 
     def display(self):
-        """
-        Exhum, they had bevarge service on the flight...
-        """
         n = max(self.n, 2)
         if n % 2 == 1: n += 1
         triangle = ['/' + '_'*n + '\\']
