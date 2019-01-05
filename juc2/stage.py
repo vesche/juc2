@@ -18,7 +18,7 @@ def _clear_terminal():
 
 
 class Stage:
-    """The juc2 Stage"""
+    """juc2 Stage object"""
 
     def __init__(self, width=40, height=20, frame=False):
         self.width = width
@@ -27,7 +27,7 @@ class Stage:
         self.grid = [list(' '*width) for i in range(height)]
 
     @staticmethod
-    def prep_figure(figure):
+    def _prep_figure(figure):
         """Remove blank lines from figure."""
         return '\n'.join([row for row in figure.split('\n') if row != ''])
 
@@ -57,7 +57,7 @@ class Stage:
         """Loads a figure onto the grid."""
         y = figure.y
         x = initial_x = figure.x
-        chars = self.prep_figure(figure.display())
+        chars = self._prep_figure(figure.display())
 
         for c in chars:
             if c == '\n':
@@ -72,8 +72,9 @@ class Stage:
 
     def draw(self, art_queue=None, FPS=None):
         """Draws a figure or figures onto the terminal."""
+
         # 1 - Clear Terminal
-        clear_terminal()
+        _clear_terminal()
 
         # 2 - Clear Stage
         self.clear_stage()
@@ -94,4 +95,4 @@ class Stage:
 
         # 5 - Wait
         if FPS:
-            tick(FPS)
+            _tick(FPS)
