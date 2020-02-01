@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-juc2/example/example_02.py
+juc2/examples/example_02.py
 
 Move a rectangle across the terminal. <3
 """

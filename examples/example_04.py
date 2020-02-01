@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-juc2/example/example_04.py
+juc2/examples/example_04.py
 
 Move a horse back and forth across the terminal.
 Change the direction of an arrow. :3

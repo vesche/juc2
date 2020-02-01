@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-juc2/example/example_03.py
+juc2/examples/example_03.py
 
 Draw a triangle and square to the terminal.
 The square will move around at random. :D

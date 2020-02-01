@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-juc2/example/example_01.py
+juc2/examples/example_01.py
 
 Draws a horse to the terminal. :)
 """

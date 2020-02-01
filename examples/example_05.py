@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-juc2/example/example_05.py
+juc2/examples/example_05.py
 
 Display all ascii art one at a time. :O
 """
@@ -18,4 +18,5 @@ def demo(category):
 
 demo(art.Animals)
 demo(art.Objects)
+demo(art.Shapes)
 demo(art.Symbols)
