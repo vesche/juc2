@@ -1,5 +1,8 @@
 """juc2.art.symbols"""
 
+from juc2.art.meta import _Meta
+
+
 arrow_down = r'''
      .
        .
@@ -51,16 +54,6 @@ arrow_up = r'''
 
       .
 '''
-
-
-class _Meta:
-    def __init__(self, x=0, y=0, transparent=False):
-        self.x = x
-        self.y = y
-        self.transparent = transparent
-    
-    def display(self):
-        return self.figure
 
 
 class Symbols:

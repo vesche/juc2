@@ -5,6 +5,14 @@ import time
 
 from juc2 import art
 
+mirror_ascii = [
+    ('(', ')'),
+    ('[', ']'),
+    ('>', '<'),
+    ('{', '}'),
+    ('/', '\\')
+]
+
 
 def _tick(FPS):
     """Sleep desired frames per second."""
@@ -31,6 +39,19 @@ class Stage:
         """Remove blank lines from figure."""
         return '\n'.join([row for row in figure.split('\n') if row != ''])
 
+    @staticmethod
+    def _reverse_figure(figure):
+        """Reverses an ascii art figure."""
+        li = figure.splitlines()
+        longest_line = max([len(l) for l in li])
+
+        for n in range(len(li)):
+            for i, j in mirror_ascii:
+                li[n] = li[n].replace(i, '!TMP!').replace(j, i).replace('!TMP!', j)
+            li[n] = li[n].ljust(longest_line)[::-1]
+
+        return '\n'.join(li)
+
     def display(self):
         """Displays the grid to the terminal."""
         for row in self.grid:
@@ -38,12 +59,13 @@ class Stage:
 
     def stage_eraser(self):
         """Get the stage eraser."""
-        return art.Eraser(width=self.width, height=self.height)
+        return art.Tools.Eraser(width=self.width, height=self.height)
 
     def stage_frame(self):
         """Get the stage frame."""
-        return art.Rectangle(width=self.width, height=self.height,
-                             transparent=True)
+        return art.Shapes.Rectangle(
+            width=self.width, height=self.height, transparent=True
+        )
 
     def clear_stage(self):
         """Clear the stage."""
@@ -53,18 +75,21 @@ class Stage:
         """Load the frame."""
         self.load(self.stage_frame())
 
-    def load(self, figure):
-        """Loads a figure onto the grid."""
-        y = figure.y
-        x = initial_x = figure.x
-        chars = self._prep_figure(figure.display())
+    def load(self, artwork):
+        """Loads artwork onto the grid."""
+        y = artwork.y
+        x = initial_x = artwork.x
+        if artwork.reverse_art:
+            artwork.figure = self._reverse_figure(artwork.figure)
+            artwork.reverse_art = False
+        chars = self._prep_figure(artwork.figure)
 
         for c in chars:
             if c == '\n':
                 y += 1
                 x = initial_x
                 continue
-            if c == ' ' and figure.transparent:
+            if c == ' ' and artwork.transparent:
                 x += 1
                 continue
             self.grid[y][x] = c
@@ -81,12 +106,12 @@ class Stage:
 
         # 3 - Load Art
         if isinstance(art_queue, list):
-            for figure in art_queue:
-                self.load(figure)
+            for artwork in art_queue:
+                self.load(artwork)
         else:
             if art_queue:
-                figure = art_queue
-                self.load(figure)
+                artwork = art_queue
+                self.load(artwork)
         if self.frame:
             self.load_frame()
 

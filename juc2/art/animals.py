@@ -1,5 +1,8 @@
 """juc2.art.animals"""
 
+from juc2.art.meta import _Meta
+
+
 aardvardk = r'''
        _.---._    /\\
     ./'       "--`\//
@@ -230,16 +233,6 @@ whale = r'''
     `,.__.   ,__.--/
       '._/_.'___.-`
 '''
-
-
-class _Meta:
-    def __init__(self, x=0, y=0, transparent=False):
-        self.x = x
-        self.y = y
-        self.transparent = transparent
-    
-    def display(self):
-        return self.figure
 
 
 class Animals:

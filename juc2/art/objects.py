@@ -1,5 +1,8 @@
 """juc2.art.objects"""
 
+from juc2.art.meta import _Meta
+
+
 anchor = r'''
        (_)
         |
@@ -225,16 +228,6 @@ wine_glass = r'''
 (  ''  )
  `----'
 '''
-
-
-class _Meta:
-    def __init__(self, x=0, y=0, transparent=False):
-        self.x = x
-        self.y = y
-        self.transparent = transparent
-    
-    def display(self):
-        return self.figure
 
 
 class Objects:

@@ -13,7 +13,3 @@
 """
 
 from juc2.stage import Stage
-
-__author__ = 'vesche'
-__email__ = 'vesche@protonmail.com'
-__version__ = '0.0.1'
