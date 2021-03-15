@@ -8,7 +8,9 @@ class Shapes:
     class Rectangle(_Meta):
         def __init__(self, width=3, height=3, *args, **kwargs):
             super().__init__(*args, **kwargs)
-            self.figure = self._get_rectangle(width, height)
+            self.width = width
+            self.height = height
+            self.figure = self._get_rectangle(self.width, self.height)
 
         def _get_rectangle(self, width, height):
             top = '╔' + '═' * (width-2) + '╗' + '\n'

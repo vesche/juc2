@@ -5,7 +5,7 @@ from setuptools import setup
 setup(
     name='juc2',
     packages=['juc2', 'juc2.art'],
-    version='0.1.1',
+    version='0.1.2',
     description='juc2 - Just Use Curses (Mark 2)',
     license='MIT',
     url='https://github.com/vesche/juc2',
